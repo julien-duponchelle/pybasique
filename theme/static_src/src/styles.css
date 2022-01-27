@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .btn-primary {
+    @apply cursor-pointer hover:bg-gray-400 font-semibold focus:bg-gray-400 opacity-100 text-white rounded-lg px-6 py-3 mt-6 bg-gray-800;
+  }
+}

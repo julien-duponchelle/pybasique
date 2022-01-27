@@ -1,0 +1,28 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PyBasique</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% tailwind_css %}
+  </head>
+
+  <body class="bg-gray-50 font-serif leading-normal tracking-normal">
+    <main class="flex flex-row h-screen">
+        <div class="w-1/2 hidden bg-cover md:block"  style="background-image: url('https://source.unsplash.com/phIFdC6lA4E/1024')">
+        </div>
+
+        <div class="bg-white w-full md:w-1/2 px-3 md:px-6 md:items-center justify-center flex md:flex-grow">
+
+            <div class="w-full h-100">
+                <div class="w-full text-right" >
+                    <a href="javascript:history.go(1)">Back</a>
+                </div>
+                {% block content %} {% endblock content %}
+            </div>
+        </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "half.html" %}
+{% load tailwind_filters %}
+
+
+{% block content %}
+
+<h1 class="text-2xl font-bold leading-tight mt-12">Log in to your account</h1>
+
+<form method="post" action="{% url 'login' %}" class="mt-6">
+  {% csrf_token %}
+
+  {{ form|crispy }}
+
+  <input type="submit" value="Login" class="btn-primary w-full" />
+</form>
+
+<hr class="my-6 border-gray-500 w-full">
+
+<p class="mt-8"><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+{% endblock %}

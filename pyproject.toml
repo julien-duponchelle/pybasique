@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "pybasique"
+version = "0.1.0"
+description = ""
+authors = ["Julien Duponchelle <julien@duponchelle.info>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^4.0.1"
+django-stubs = "^1.9.0"
+psycopg2 = "^2.9.3"
+django-tailwind = "^3.1.1"
+crispy-tailwind = "^0.5.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+honcho = "^1.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "pybasique.settings"
