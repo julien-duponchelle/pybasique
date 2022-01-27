@@ -61,6 +61,8 @@ Q_CLUSTER = {
     'timeout': 60
 }
 
+LOGIN_REDIRECT_URL = '/'
+
 TAILWIND_APP_NAME = "theme"
 
 MIDDLEWARE = [
