@@ -5,8 +5,10 @@ This the base project I'm using for doing quick proof of concepts with Django.
 It's provide:
 
 - Django
+- Django Q job queue
 - Tailwind
 - Type checking
+- Basic theme
 - A full featured articles models + controller for embeding a blog
 - PostgreSQL
 - Procfile support with honcho

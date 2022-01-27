@@ -38,6 +38,10 @@ FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
 INSTALLED_APPS = [
     "theme",
+    "pages.apps.PagesConfig",
+
+    "tailwind",
+
     "django.forms",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -45,11 +49,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "debug_toolbar",
-    "tailwind",
+ 
+    "debug_toolbar",   
     "django_browser_reload",
-    "pages.apps.PagesConfig",
+
+    "django_q",
 ]
+
+Q_CLUSTER = {
+    'retry': 120,
+    'timeout': 60
+}
 
 TAILWIND_APP_NAME = "theme"
 
