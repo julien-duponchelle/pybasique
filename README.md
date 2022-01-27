@@ -53,3 +53,10 @@ python manage.py migrate
 ```
 ./bin/dev
 ```
+
+## Update translations
+
+```
+django-admin makemessages -a
+django-admin compilemessages
+```
