@@ -1,0 +1,6 @@
+#!/bin/bash
+
+poetry export -f requirements.txt --output requirements.txt
+git add requirements.txt
+git commit -m "Deployment"
+git push heroku main

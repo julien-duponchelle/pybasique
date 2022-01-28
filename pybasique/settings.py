@@ -23,6 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-&qd!7sj7l9z@5nbiy7^9!#xgp9-*-p7(yzvt^f6teq-mgmfljz"
 
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
