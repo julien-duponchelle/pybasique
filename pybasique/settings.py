@@ -21,19 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# TODO: Need to be override in the env
-SECRET_KEY = "django-insecure-&qd!7sj7l9z@5nbiy7^9!#xgp9-*-p7(yzvt^f6teq-mgmfljz"
-
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if "DEBUG" in os.environ:
+    DEBUG = True
 
 ALLOWED_HOSTS = []
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+if "INTERNAL_IPS" in os.environ:
+    INTERNAL_IPS = os.environ["INTERNAL_IPS"].split(',')
 
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 

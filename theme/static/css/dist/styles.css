@@ -870,10 +870,6 @@ select {
   padding-left: 0.75rem;
 }
 
-.text-right {
-  text-align: right;
-}
-
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
