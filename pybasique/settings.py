@@ -23,11 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 if "DEBUG" in os.environ:
     DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = []
 
 if "INTERNAL_IPS" in os.environ:
     INTERNAL_IPS = os.environ["INTERNAL_IPS"].split(',')
+else:
+    INTERNAL_IPS = []
+
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
