@@ -23,9 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-&qd!7sj7l9z@5nbiy7^9!#xgp9-*-p7(yzvt^f6teq-mgmfljz"
 
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,9 +40,7 @@ FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 INSTALLED_APPS = [
     "theme",
     "pages.apps.PagesConfig",
-
     "tailwind",
-
     "django.forms",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -53,19 +48,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
- 
-    "debug_toolbar",   
+    "debug_toolbar",
     "django_browser_reload",
-
     "django_q",
 ]
 
-Q_CLUSTER = {
-    'retry': 120,
-    'timeout': 60
-}
+Q_CLUSTER = {"retry": 120, "timeout": 60}
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = "/"
 
 TAILWIND_APP_NAME = "theme"
 
@@ -156,3 +146,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Configure Django App for Heroku.
+import django_heroku
+
+django_heroku.settings(locals())
