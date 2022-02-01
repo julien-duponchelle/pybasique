@@ -29,7 +29,7 @@ else:
 ALLOWED_HOSTS = []
 
 if "INTERNAL_IPS" in os.environ:
-    INTERNAL_IPS = os.environ["INTERNAL_IPS"].split(',')
+    INTERNAL_IPS = os.environ["INTERNAL_IPS"].split(",")
 else:
     INTERNAL_IPS = []
 
@@ -42,6 +42,7 @@ FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 INSTALLED_APPS = [
     "theme",
     "pages.apps.PagesConfig",
+    "user.apps.UserConfig",
     "tailwind",
     "django.forms",
     "django.contrib.admin",
