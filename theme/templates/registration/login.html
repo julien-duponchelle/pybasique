@@ -1,20 +1,25 @@
 {% extends "half.html" %}
-
+{% load i18n %} 
 {% block content %}
 
-<h1 class="text-2xl font-bold leading-tight mt-12">Log in to your account</h1>
+<h1 class="text-2xl font-bold leading-tight mt-12"> {% translate 'Log in to your account' %}</h1>
 
 <form method="post" action="{% url 'login' %}" class="mt-6">
   {% csrf_token %}
 
   {{ form }}
 
-  <input type="submit" value="Login" class="btn-primary w-full" />
+  <input type="submit" value="{% translate 'Login' %}" class="btn-primary w-full" />
   <input type="hidden" name="next" value="{{ next }}">
 </form>
 
 <hr class="my-6 border-gray-500 w-full">
 
-<p class="mt-8"><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<a href="{% url 'signup' %}">
+  <p class="mt-8 w-full btn-primary">
+    {% translate 'Create an account' %}
+  </p>
+</a>
+<p class="mt-8"><a href="{% url 'password_reset' %}"> {% translate 'Lost password?' %}</a></p>
 
 {% endblock %}
