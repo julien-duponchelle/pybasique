@@ -1,0 +1,34 @@
+#!/bin/env python3
+
+import os
+import glob
+import shutil
+import subprocess
+
+subprocess.check_output(
+    [
+        "git",
+        "fetch",
+        "pybasique",
+    ]
+)
+
+
+subprocess.check_output(
+    [
+        "git",
+        "merge",
+        "pybasique/main",
+    ]
+)
+
+
+for filepath in glob.iglob("./**/*.*", recursive=True):
+    if filepath.endswith(".mo"):
+        continue
+    with open(filepath) as file:
+        s = file.read()
+    s = s.replace("pybasique", project_name)
+    s = s.replace("PyBasique", project_name.capitalize())
+    with open(filepath, "w") as file:
+        file.write(s)
