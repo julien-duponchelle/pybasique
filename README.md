@@ -18,23 +18,10 @@ It's provide:
 
 Apache 2
 
-## Setup
 
-```
-cp env.sample .env
-```
+### Setup
 
-### PostgreSQL
-
-```
-sudo -u postgres createuser --interactive -d
-
-# Set password
-sudo -u postgres psql
-postgres=# \password pybasique
-```
-
-### Run setup
+Install poetry.
 
 ```
 ./bin/setup

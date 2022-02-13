@@ -1,3 +1,11 @@
 #!/bin/bash
 
+poetry install
+
+cp env.sample .env
+
+sudo -u postgres createuser pybasique
+sudo -u postgres createdb -O pybasique pybasique
+sudo -u postgres psql -c "ALTER USER pybasique PASSWORD 'pybasique';" 
+
 ./bin/manage migrate
