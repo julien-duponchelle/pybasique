@@ -1,0 +1,50 @@
+#!/bin/env python3
+
+import os
+import glob
+import shutil
+import subprocess
+
+project_name = input("Project name: ").lower()
+print("Creating project ", project_name)
+
+subprocess.check_output(
+    [
+        "git",
+        "clone",
+        "-o",
+        "basique",
+        "git@github.com:noplay/pybasique.git",
+        project_name,
+    ]
+)
+
+os.chdir(project_name)
+shutil.move("pybasique", project_name)
+
+for filepath in glob.iglob("./**/*.*", recursive=True):
+    if filepath.endswith(".mo"):
+        continue
+    with open(filepath) as file:
+        s = file.read()
+    s = s.replace("pybasique", project_name)
+    s = s.replace("PyBasique", project_name.capitalize())
+    with open(filepath, "w") as file:
+        file.write(s)
+
+subprocess.check_output(
+    [
+        "git",
+        "add",
+        ".",
+    ]
+)
+
+subprocess.check_output(
+    [
+        "git",
+        "commit",
+        "-m",
+        "Starting project " + project_name,
+    ]
+)
